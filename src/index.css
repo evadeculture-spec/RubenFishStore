@@ -1,0 +1,81 @@
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/manrope';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-sand-100 font-sans text-ink antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-abyss-900;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 3px solid #22A396;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  .on-dark :focus-visible {
+    outline-color: #93D9D1;
+  }
+  ::selection {
+    background: #C9ECE8;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.14em] text-tide-600;
+  }
+  .card {
+    @apply relative rounded-2xl border border-sand-300/80 bg-white shadow-card;
+  }
+  .input {
+    @apply block w-full rounded-xl border border-sand-400 bg-white px-3.5 py-2.5 text-[15px] text-ink placeholder:text-ink-muted/70
+      focus:border-tide-500 focus:outline-none focus:ring-2 focus:ring-tide-300/60 disabled:bg-sand-200;
+  }
+  .input[aria-invalid='true'] {
+    @apply border-coral-600 ring-1 ring-coral-600/40;
+  }
+  .link {
+    @apply font-semibold text-tide-600 underline decoration-tide-300 decoration-2 underline-offset-4 hover:decoration-tide-600;
+  }
+  .prose-demo p {
+    @apply mb-3 leading-relaxed text-ink-soft;
+  }
+  .prose-demo h2 {
+    @apply mb-2 mt-6 text-xl font-semibold;
+  }
+  .prose-demo ul {
+    @apply mb-3 list-disc space-y-1 pl-5 text-ink-soft;
+  }
+  .prose-demo ol {
+    @apply mb-3 list-decimal space-y-1 pl-5 text-ink-soft;
+  }
+}
+
+dialog::backdrop {
+  background: rgba(7, 27, 51, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
