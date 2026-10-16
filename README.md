@@ -20,6 +20,8 @@ npm run build
 npm run preview      # → http://localhost:4173
 ```
 
+Deploy no Netlify: o `netlify.toml` define o build (`npm run build`, pasta `dist`, Node 22) e o redirecionamento de todas as rotas para `index.html`, necessário para abrir ou recarregar páginas como `/planos` diretamente.
+
 Verificações:
 
 ```bash
